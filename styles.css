@@ -1,0 +1,224 @@
+/* ===== Variables de color y tipografía ===== */
+:root {
+  --color-principal: #1e6f5c;
+  --color-principal-oscuro: #4b3324;
+  --color-fondo: #faf7f2;
+  --color-texto: #2b2b2b;
+  --color-error: #c0392b;
+  --color-exito: #2e7d32;
+  --radio: 8px;
+}
+
+/* ===== Estilos base ===== */ 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-principal-oscuro);
+}
+
+/* ===== Encabezado ===== */
+.encabezado {
+  background-color: var(--color-principal-oscuro);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.encabezado__contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.menu a {
+  color: #f1e6dc;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(135deg, var(--color-principal), var(--color-principal-oscuro));
+  color: #fff;
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== Botón reutilizable ===== */
+.boton {
+  display: inline-block;
+  background-color: #d4a373;
+  color: var(--color-principal-oscuro);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: var(--radio);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.boton:hover {
+  background-color: #e0b98f;
+}
+
+.boton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Servicios ===== */
+.servicios {
+  padding: 4rem 0;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radio);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta h3 {
+  color: var(--color-principal);
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Contacto / formulario ===== */
+.contacto {
+  background-color: #fff;
+  padding: 4rem 0;
+}
+
+.formulario {
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+.campo {
+  margin-bottom: 1.2rem;
+}
+
+.campo label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: var(--radio);
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--color-principal);
+  box-shadow: 0 0 0 3px rgba(111, 78, 55, 0.2);
+}
+
+/* Campo con error (la clase la agrega JavaScript) */
+.campo.invalido input,
+.campo.invalido textarea {
+  border-color: var(--color-error);
+}
+
+.error {
+  color: var(--color-error);
+  font-size: 0.85rem;
+}
+
+.exito {
+  margin-top: 1rem;
+  color: var(--color-exito);
+  font-weight: 600;
+}
+
+/* ===== Pie de página ===== */
+.pie {
+  background-color: var(--color-principal-oscuro);
+  color: #f1e6dc;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ===== Pantallas pequeñas (celulares) ===== */
+@media (max-width: 600px) {
+  .encabezado__contenido {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+}
